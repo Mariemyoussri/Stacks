@@ -37,6 +37,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
         openBracket.pop();
       }
     }
+    bracket = checkString(bracket);
     Object[] brackets = {bracket,i};
     return brackets;
   }
@@ -189,7 +190,6 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
   public String infixToPostfix(String expression) {
     String postFix = "";
     Stack operators = new Stack();
-    expression = checkString(expression);
     expression = checkString(expression);
     if (expression != null) {
       for (int i = 0; i < expression.length(); i++) {
